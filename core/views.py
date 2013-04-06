@@ -15,7 +15,7 @@ def mp(request, mp_id):
     data = {
         'mp' : mp_api(mp_id)
     }
-    print json.dumps(data, indent=4)
+    
     return render_to_response('core/mp.html', data, context_instance=RequestContext(request))
 
 
@@ -59,11 +59,8 @@ def distance_meaning(score):
     
     return desc
 
-def mp_api_hack(mp_id):
-    print mp_id
-    # return_json(
-    #     mp_api(mp_id)
-    # )
+def mp_api_hack(request, mp_id):
+    return return_json( mp_api(mp_id) )
 
 
 def mp_api(mp_id):
