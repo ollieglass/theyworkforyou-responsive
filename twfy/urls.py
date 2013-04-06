@@ -1,5 +1,7 @@
 from django.conf.urls import patterns, include, url
 
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 urlpatterns = patterns('core.views',
     url(r'^$', 'index', name='index'),
@@ -8,3 +10,4 @@ urlpatterns = patterns('core.views',
     url(r'^lookup/$', 'lookup'),
 )
 
+urlpatterns += staticfiles_urlpatterns()
