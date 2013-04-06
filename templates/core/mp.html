@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="row">
+        <h3>{{ mp.name }}</h3>
+        <h4>{{ mp.party }}</h4>
+        <img id="mp-photo" src="{{ STATIC_URL }}images/{{ mp.photo }}">
+    </div>
+
+    <div class="row">
+        <h4>Voting record</h4>
+        <ul>
+            {% for vote_id, vote in mp.votes.items %}
+                {% if vote.name %}<li><strong>{{ vote.vote }}</strong> {{ vote.name }}</li>{% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}
+

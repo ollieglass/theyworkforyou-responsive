@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0" />
+
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico">
+    <link rel="apple-touch-icon" href="{{ STATIC_URL }}img/apple-touch-icon.png">
+
+
+    <!-- IE performance hacks -->
+    <!--[if IE]><![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+    <!-- CSS --> 
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
+
+    <style type="text/css">
+        h1, h2, h3, h4 {
+            line-height: 20px;
+        }
+
+        h4 {
+            color: #4D6C25;
+        }
+
+        body {
+            /*padding-top: 40px;*/
+        }
+
+        .search-input {
+            margin-top: 10px;
+            width: 95%;
+        }
+
+        .search-row {
+            position: absolute;
+            background-color: white;
+            width: 89%;
+        }
+
+        .hh {
+            border: 1px solid gray;
+        }
+
+        .search-row ul li {
+            list-style: none
+        }
+
+        .search-row ul li {
+            color: green;
+            font-size: 1.3em;
+            background-color: white;
+        }
+
+        .search-row ul li a {
+            color: green;
+        }
+
+        #mp-photo {
+            margin-bottom: 10px;
+        }
+
+    </style>
+    <!-- title + meta description -->
+    <title>{% block title %}They Work For You{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{% endblock %}" />
+
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+
+    <a href="/"><img src="{{ STATIC_URL }}logo.png"></a>
+
+    <!-- top menu -->
+    <div class="row search-bar">
+        <input type="text" class="search-input" name="search" placeholder="Search">
+    </div>
+
+    <div class="container">
+        <div class="row search-row">
+            <ul id="search-results">
+            </ul>
+        </div>
+
+
+        {% block content %}{% endblock %}
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+
+    <script src="{{ STATIC_URL}}js/twfy.js"></script>
+
+    {% block script %}{% endblock %}
+</body>
+</html>
