@@ -1,4 +1,11 @@
+import os
+
 # Django settings for twfy project.
+
+HOST_ROLE = os.environ.get('HOST_ROLE', 'prod')
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+SITE_ROOT = os.path.dirname(os.path.abspath(PROJECT_ROOT))
+
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -83,7 +90,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '%ceg1c)m*zigw0r*#)$s5&5pjt%-*0d)#&&+#o@x&)dd480=9_'
+SECRET_KEY = '*naoz7$)mkc4l8_^g_dj$ai2=m3f16=5)1m!u&_4)@)pm&1%hn'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -108,9 +115,7 @@ ROOT_URLCONF = 'twfy.urls'
 WSGI_APPLICATION = 'twfy.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(SITE_ROOT, "templates"),
 )
 
 INSTALLED_APPS = (
@@ -124,6 +129,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'gunicorn',
+    'core'
 )
 
 # A sample logging configuration. The only tangible logging

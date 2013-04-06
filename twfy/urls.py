@@ -1,17 +1,10 @@
 from django.conf.urls import patterns, include, url
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'twfy.views.home', name='home'),
-    # url(r'^twfy/', include('twfy.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+urlpatterns = patterns('core.views',
+    url(r'^$', 'index', name='index'),
+    url(r'^mp/(?P<mp_id>\d+)/', 'mp'),
+    url(r'^mp_api/(?P<mp_id>\d+)/', 'mp_api'),
+    url(r'^lookup/$', 'lookup'),
 )
+
