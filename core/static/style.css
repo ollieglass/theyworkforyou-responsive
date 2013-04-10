@@ -1,0 +1,40 @@
+h1, h2, h3, h4 {
+    line-height: 20px;
+}
+
+h4 {
+    color: #4D6C25;
+}
+
+.search-input {
+    margin-top: 10px;
+    width: 95%;
+}
+
+.search-row {
+    position: absolute;
+    background-color: white;
+    width: 89%;
+}
+
+.hh {
+    border: 1px solid gray;
+}
+
+.search-row ul li {
+    list-style: none
+}
+
+.search-row ul li {
+    color: green;
+    font-size: 1.3em;
+    background-color: white;
+}
+
+.search-row ul li a {
+    color: green;
+}
+
+#mp-photo {
+    margin-bottom: 10px;
+}

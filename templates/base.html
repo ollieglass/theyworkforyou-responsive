@@ -21,54 +21,8 @@
     <!-- CSS --> 
     <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style.css" />
 
-    <style type="text/css">
-        h1, h2, h3, h4 {
-            line-height: 20px;
-        }
-
-        h4 {
-            color: #4D6C25;
-        }
-
-        body {
-            /*padding-top: 40px;*/
-        }
-
-        .search-input {
-            margin-top: 10px;
-            width: 95%;
-        }
-
-        .search-row {
-            position: absolute;
-            background-color: white;
-            width: 89%;
-        }
-
-        .hh {
-            border: 1px solid gray;
-        }
-
-        .search-row ul li {
-            list-style: none
-        }
-
-        .search-row ul li {
-            color: green;
-            font-size: 1.3em;
-            background-color: white;
-        }
-
-        .search-row ul li a {
-            color: green;
-        }
-
-        #mp-photo {
-            margin-bottom: 10px;
-        }
-
-    </style>
     <!-- title + meta description -->
     <title>{% block title %}They Work For You{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}{% endblock %}" />
@@ -78,14 +32,17 @@
 
 <body>
 
-    <a href="/"><img src="{{ STATIC_URL }}logo.png"></a>
-
-    <!-- top menu -->
-    <div class="row search-bar">
-        <input type="text" class="search-input" name="search" placeholder="Search">
-    </div>
-
     <div class="container">
+        <a href="/"><img src="{{ STATIC_URL }}logo.png"></a>
+
+        <div class="row search-bar">
+            <form>
+                <fieldset>
+                    <input type="text" class="search-input" name="search" placeholder="Search">
+                </fieldset>
+            </form>
+        </div>
+        
         <div class="row search-row">
             <ul id="search-results">
             </ul>
